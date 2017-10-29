@@ -5,7 +5,7 @@
  */
 package ProyectoDeGrado;
 
-import static ProyectoDeGrado.LoginPassCam.ARRIBA;
+
 import static ProyectoDeGrado.LoginPassCam.authStringEnc;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,6 +52,7 @@ public class ConexionCamara {
     }
 
     public void setUrLConnection(String urLConnection) {
+        
         
         URLConnection urlConnection = null;
         try {

@@ -22,6 +22,8 @@ public class ControlCamara implements LoginPassCam
 {
     PanelCamara panelVideo = new PanelCamara();
     ConexionCamara conexionCamara = new ConexionCamara();
+    ArchivoPropiedades ap = new ArchivoPropiedades();
+ 
     
     public ControlCamara()
     {
@@ -36,25 +38,25 @@ public class ControlCamara implements LoginPassCam
   
     public void arriba()
     {
-      conexionCamara.setUrlControl(ARRIBA);
+      conexionCamara.setUrlControl(ap.getArriba());
         
     }
     
     public void abajo()
     {
-         conexionCamara.setUrlControl(ABAJO);
+         conexionCamara.setUrlControl(ap.getAbajo());
         
     }
         
     public void derecha()
     {
-        conexionCamara.setUrlControl(DERECHA);
+        conexionCamara.setUrlControl(ap.getDerecha());
         
     }
    
     public void izquierda()
     {
-        conexionCamara.setUrlControl(IZQUIERDA);
+        conexionCamara.setUrlControl(ap.getIzquierda());
 
 //         try
 //        {
@@ -75,7 +77,7 @@ public class ControlCamara implements LoginPassCam
     {
         try
         {
-            URL url = new URL(ESTADO_INICIAL); 
+            URL url = new URL(ap.getEstado_inicial()); 
             URLConnection urlConnection = url.openConnection();
            
             urlConnection.connect(); 

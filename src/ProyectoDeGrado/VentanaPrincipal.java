@@ -34,7 +34,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import org.apache.commons.codec.binary.Base64;
-import static ProyectoDeGrado.LoginPassCam.IP_CAM;
+
 
 
 
@@ -47,11 +47,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
   
     ControlCamara controlCamara;
     Arduino arduino;
-    
+    ArchivoPropiedades ap = new ArchivoPropiedades();
     public VentanaPrincipal() {
     
         controlCamara= new ControlCamara();
         arduino = new Arduino();
+        
         initComponents();
         setTitle("Visor de Cámaras IP");
         setResizable(false);
@@ -335,7 +336,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 private void botonConectarCamaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConectarCamaraActionPerformed
 
     
-    panelVideo.setDireccionIP(IP_CAM);    
+    panelVideo.setDireccionIP(ap.getIp_video());    
     panelVideo.setHayConexion(true);
     panelVideo.repaint();
     this.requestFocus(); //La ventana principal vuelve a requerir el foco
